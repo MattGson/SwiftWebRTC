@@ -6,7 +6,7 @@ A Swift interface for WebRTC using [libjingle_peerconnection](https://cocoapods.
 Add the following to your podfile:
 
 ```pod 'libjingle_peerconnection'
-   pod 'SocketRocket
+   pod 'SocketRocket'
 ```
 Run ```pod install```
 
