@@ -72,22 +72,18 @@ class ViewController: UIViewController {
 
 extension ViewController:RTClientDelegate {
     
-    func addedStream(stream: RTCMediaStream) {
-    
-        if (stream.videoTracks.count > 0) {
-        let remoteTrack:RTCVideoTrack = stream.videoTracks[0] as! RTCVideoTrack;
+    func addedRemoteVideoTrack(videoTrack:RTCVideoTrack) {
         
         if (self.remoteVideoTrack != nil) {
             self.remoteVideoTrack?.remove(self.remoteView);
             self.remoteVideoTrack = nil;
             self.remoteView.renderFrame(nil);
         }
-        
-        self.remoteVideoTrack = remoteTrack;
+        self.remoteVideoTrack = videoTrack;
         self.remoteVideoTrack?.add(self.remoteView);
-        }
     }
-    
+
+
     
     func didConnect() {
         self.setLocalPreview();

@@ -11,7 +11,7 @@ import SocketRocket
 
 protocol RTClientDelegate {
     
-    func addedStream(stream:RTCMediaStream);
+    func addedRemoteVideoTrack(videoTrack:RTCVideoTrack);
     func didConnect();
     func didDisconnect();
 }
@@ -201,8 +201,10 @@ extension RTClient:WebRTCDelegate {
     func addedStream(stream: RTCMediaStream) {
         
         self.remoteStream = stream;
-        self.delegate.addedStream(stream: self.remoteStream!);
-        
+        if (stream.videoTracks.count > 0) {
+            let remoteTrack:RTCVideoTrack = stream.videoTracks[0] as! RTCVideoTrack;
+            self.delegate.addedRemoteVideoTrack(videoTrack: remoteTrack);
+        }
     }
     
 }
