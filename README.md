@@ -24,6 +24,6 @@ Run ```pod install```
 
 Run an instance of the [Signalite](https://github.com/Mattattack/Signalite) server
 
-See the example [viewController]() for setting up and managing a connection.
+See the example [viewController](https://github.com/Mattattack/SwiftWebRTC/blob/master/ViewController.swift) for setting up and managing a connection.
 Remember to change the URL to the location where the server is running.
    
